@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hardware.page.scss'],
 })
 export class HardwarePage implements OnInit {
+  constructor(){}
+  ngOnInit() {}
 
-  constructor() { }
+  gravarHardware(){
 
-  ngOnInit() {
   }
-
+  
 }
