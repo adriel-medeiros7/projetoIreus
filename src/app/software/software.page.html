@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>software</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf=" evento">
+    <ion-item>
+      <ion-label position="floating">Id:</ion-label>
+      <ion-input type="number" [(ngModel)]="evento.id"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nome:</ion-label>
+      <ion-input type="text" [(ngModel)]="evento.nome" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">terceiros:</ion-label>
+      <ion-input type="number" [(ngModel)]="evento." ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nivel:</ion-label>
+      <ion-input type="text" [(ngModel)]="evento.nivel" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Numero da Licença:</ion-label>
+      <ion-input type="number" [(ngModel)]="evento." ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tem Licença:</ion-label>
+      <ion-input type="text" [(ngModel)]="evento.licenca" ></ion-input>
+    </ion-item>
+    <div class="ion-text-center">
+      <ion-button (click)="gravar()" shape="round" fill="outline">Gravar</ion-button>
+      <ion-button routerLink="/home" shape="round" fill="outline">Cancelar</ion-button>
+      <ion-button routerLink="/home" shape="round" fill="outline">Lista</ion-button>
+    </div>
+    
+    
+  </ion-list>
+
+
+</ion-content>
