@@ -6,8 +6,19 @@
 
 <ion-content>
   <div id="container">
-    <ion-button (click)="listar" shape="round" fill="outline">Relatorio de Software </ion-button><br/>
+    <ion-button (click)="listar()" shape="round" fill="outline">Relatorio de Software </ion-button><br/>
+    <ion-list>
+      <ion-item *ngFor="let hardware of hardwares">
+        <ion-label>
+          Identificação: {{hardware.ident}}<br/>
+          Equipamento: {{hardware.equip}}<br/>
+          Empresa: {{hardware.empresa}}<br/>
+          Setor: {{hardware.setor}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
     <ion-button shape="round" fill="outline">Relatorio de Hardware </ion-button><br/>
+    <ion-button shape="round" fill="outline">Relatorio de Empresas </ion-button><br/>
     <ion-button routerLink="/home" shape="round" fill="outline">Voltar</ion-button><br/>
   </div>
 </ion-content>

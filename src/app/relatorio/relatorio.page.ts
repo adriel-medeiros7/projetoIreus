@@ -13,11 +13,11 @@ export class RelatorioPage implements OnInit {
   ngOnInit() {
   }
 
-  listar(filtro:string='todas'): Hardware[] {
-    let hardware=[];
+  listarHardware():Hardware[]{
+    let hardwares = [];
     if (localStorage.getItem('hardware')) {
-      hardware = JSON.parse(localStorage.getItem('hardware'));
+      hardwares = JSON.parse(localStorage.getItem('hardware'));
     }
-    return hardware;
+    return hardwares;
   }
 }
