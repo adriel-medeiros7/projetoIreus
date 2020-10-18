@@ -16,7 +16,7 @@
     </ion-item>
 		<ion-item>
 			<ion-label >Estado:</ion-label>
-			<ion-select [(ngModel)]="empresa.Estado" placeholder="Selecione o estado">
+			<ion-select [(ngModel)]="empresa.estado" placeholder="Selecione o estado">
 				<ion-select-option value="SC">SC</ion-select-option>
 				<ion-select-option value="MT">MT</ion-select-option>
 				<ion-select-option value="SP">SP</ion-select-option>
@@ -25,7 +25,7 @@
 		</ion-item>
 		<ion-item>
       <ion-label position="floating">Endereço:</ion-label>
-      <ion-input type="text" [(ngModel)]="empresa.Endereco" ></ion-input>
+      <ion-input type="text" [(ngModel)]="empresa.endereco" ></ion-input>
     </ion-item>
 		<div class="ion-text-center">
 			<ion-button (click)="gravarEmpresa()" shape="round" fill="outline">Gravar</ion-button>

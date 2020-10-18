@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'software',
     loadChildren: () => import('./software/software.module').then( m => m.SoftwarePageModule)
-  },  {
+  },
+  {
     path: 'hardware',
     loadChildren: () => import('./hardware/hardware.module').then( m => m.HardwarePageModule)
   },
@@ -30,6 +31,11 @@ const routes: Routes = [
     path: 'empresa',
     loadChildren: () => import('./empresa/empresa.module').then( m => m.EmpresaPageModule)
   },
+  {
+    path: 'listar-empresa',
+    loadChildren: () => import('./listar-empresa/listar-empresa.module').then( m => m.ListarEmpresaPageModule)
+  },
+
 
 ];
 
