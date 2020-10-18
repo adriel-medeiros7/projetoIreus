@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Hardware</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let hardware of hardwares">
+      <ion-label>{{hardware.ident}} {{hardware.equip}} {{hardware.setor}}</ion-label>
+      <ion-button (click)="removerHardware(hardware);" shape="round" fill="outline">Excluir</ion-button>
+    </ion-item>
+  </ion-list>
+  <div class="ion-text-center">
+    <ion-button routerLink="/home" shape="round" fill="outline">Voltar</ion-button>
+  </div>
+</ion-content>

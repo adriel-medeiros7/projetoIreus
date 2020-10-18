@@ -1,6 +1,6 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-title>Hardware</ion-title>
+		<ion-title>Cadastro de Hardware</ion-title>
 	</ion-toolbar>
 </ion-header>
 
@@ -22,10 +22,19 @@
 				<ion-select-option value="7">Outros</ion-select-option>
 			</ion-select>
 		</ion-item>
+		<ion-item>
+			<ion-label >Setor</ion-label>
+			<ion-select [(ngModel)]="hardware.setor" placeholder="Setor">
+				<ion-select-option value="1">Setor 1</ion-select-option>
+				<ion-select-option value="2">Setor 2</ion-select-option>
+				<ion-select-option value="3">Setor 3</ion-select-option>
+				<ion-select-option value="4">Setor 4</ion-select-option>
+				<ion-select-option value="5">Setor 5</ion-select-option>
+			</ion-select>
+		</ion-item>
 		<div class="ion-text-center">
 			<ion-button (click)="gravarHardware()" shape="round" fill="outline">Gravar</ion-button>
 			<ion-button routerLink="/home" shape="round" fill="outline">Cancelar</ion-button>
-			<ion-button routerLink="/home" shape="round" fill="outline">Lista</ion-button>
 		</div>
 	</div>
 </ion-content>
