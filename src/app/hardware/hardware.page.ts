@@ -28,18 +28,8 @@ export class HardwarePage implements OnInit {
     this.hardware.cod = Date.now()/100000;
     hardwares.push(this.hardware);
     localStorage.setItem('hardware', JSON.stringify(hardwares));
+    this.hardware = new Hardware();
     return true;
-  }
-
-  removerHardware():boolean{
-    let hardwares = this.listarHardware();
-    hardwares = hardwares.filter(
-      elemento => {
-        return elemento.cod != this.hardware.cod;
-      }
-    )
-    localStorage.setItem('hardware',JSON.stringify(hardwares));
-    return false;
   }
   
 }
@@ -48,4 +38,5 @@ export class Hardware {
   cod:any;
   ident:any;
   equip:number;
+  setor:String;
 }

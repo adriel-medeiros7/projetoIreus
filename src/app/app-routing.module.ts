@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'hardware',
     loadChildren: () => import('./hardware/hardware.module').then( m => m.HardwarePageModule)
   },
+  {
+    path: 'listar-hardware',
+    loadChildren: () => import('./listar-hardware/listar-hardware.module').then( m => m.ListarHardwarePageModule)
+  },
 
 ];
 
