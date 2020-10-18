@@ -5,12 +5,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let hardware of hardwares">
-      <ion-label>{{hardware.ident}} {{hardware.equip}} {{hardware.setor}}</ion-label>
-      <ion-button (click)="removerHardware(hardware);" shape="round" fill="outline">Excluir</ion-button>
-    </ion-item>
-  </ion-list>
+    <ion-list>
+      <ion-item *ngFor="let hardware of hardwares">
+        <ion-label>
+          Identificação: {{hardware.ident}}<br/>
+          Equipamento: {{hardware.equip}}<br/>
+          Setor: {{hardware.setor}}
+        </ion-label>
+        <ion-button (click)="removerHardware(hardware);" shape="round" fill="outline">Excluir</ion-button>
+      </ion-item>
+    </ion-list>
   <div class="ion-text-center">
     <ion-button routerLink="/home" shape="round" fill="outline">Voltar</ion-button>
   </div>
