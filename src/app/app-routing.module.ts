@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'listar-software',
     loadChildren: () => import('./listar-software/listar-software.module').then( m => m.ListarSoftwarePageModule)
   },
+  {
+    path: 'empresa',
+    loadChildren: () => import('./empresa/empresa.module').then( m => m.EmpresaPageModule)
+  },
 
 ];
 
