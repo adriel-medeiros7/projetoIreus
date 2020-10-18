@@ -20,18 +20,14 @@ const routes: Routes = [
     loadChildren: () => import('./hardware/hardware.module').then( m => m.HardwarePageModule)
   },
   {
-<<<<<<< HEAD
-    path: 'relatorio',
-    loadChildren: () => import('./relatorio/relatorio.module').then( m => m.RelatorioPageModule)
-  },
-
-];
-=======
     path: 'listar-hardware',
     loadChildren: () => import('./listar-hardware/listar-hardware.module').then( m => m.ListarHardwarePageModule)
   },
->>>>>>> 7c0e445f156c4a457060d5e6c4860926396b0a92
-
+  {
+    path: 'relatorio',
+    loadChildren: () => import('./relatorio/relatorio.module').then( m => m.RelatorioPageModule)
+  },
+];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
