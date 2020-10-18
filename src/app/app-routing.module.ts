@@ -24,10 +24,15 @@ const routes: Routes = [
     loadChildren: () => import('./listar-hardware/listar-hardware.module').then( m => m.ListarHardwarePageModule)
   },
   {
+    path: 'listar-software',
+    loadChildren: () => import('./listar-software/listar-software.module').then( m => m.ListarSoftwarePageModule)
+  },
+  {
     path: 'relatorio',
     loadChildren: () => import('./relatorio/relatorio.module').then( m => m.RelatorioPageModule)
   },
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
