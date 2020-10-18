@@ -22,6 +22,14 @@
 				<ion-select-option value="outros">Outros</ion-select-option>
 			</ion-select>
 		</ion-item>
+		<ion-item *ngIf="empresas">
+			<ion-label>Empresa</ion-label>
+			<ion-select [(ngModel)]="hardware.empresa" placeholder="Empresa">
+				<div *ngFor="let empresa of empresas">
+					<ion-select-option value="{{empresa.nome}}">{{empresa.nome}}</ion-select-option>
+				</div>
+			</ion-select>
+		</ion-item>
 		<ion-item>
 			<ion-label >Setor</ion-label>
 			<ion-select [(ngModel)]="hardware.setor" placeholder="Setor">

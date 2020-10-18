@@ -10,6 +10,7 @@ export class HardwarePage implements OnInit {
   ngOnInit() {}
 
   hardware: Hardware;
+  empresas = JSON.parse(localStorage.getItem('empresa'));
 
   ionViewDidEnter(){
     this.hardware = new Hardware();
@@ -39,4 +40,5 @@ export class Hardware {
   ident:any;
   equip:number;
   setor:String;
+  empresa:String
 }
