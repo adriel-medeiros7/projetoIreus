@@ -14,9 +14,14 @@ const routes: Routes = [
   {
     path: 'software',
     loadChildren: () => import('./software/software.module').then( m => m.SoftwarePageModule)
-  },  {
+  },
+  {
     path: 'hardware',
     loadChildren: () => import('./hardware/hardware.module').then( m => m.HardwarePageModule)
+  },
+  {
+    path: 'relatorio',
+    loadChildren: () => import('./relatorio/relatorio.module').then( m => m.RelatorioPageModule)
   },
 
 ];
