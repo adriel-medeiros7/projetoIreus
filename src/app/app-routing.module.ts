@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'listar-hardware',
     loadChildren: () => import('./listar-hardware/listar-hardware.module').then( m => m.ListarHardwarePageModule)
   },
+  {
+    path: 'listar-software',
+    loadChildren: () => import('./listar-software/listar-software.module').then( m => m.ListarSoftwarePageModule)
+  },
 
 ];
 
