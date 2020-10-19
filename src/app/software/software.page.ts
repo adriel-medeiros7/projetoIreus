@@ -12,4 +12,5 @@ export class SoftwarePage implements OnInit {
   ngOnInit() {
   }
 
+  // ID,NOME, setor, NIVEL, IDLICENCA, TEMLICENCA, CATEGORIA
 }

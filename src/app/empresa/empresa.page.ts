@@ -36,8 +36,9 @@ export class EmpresaPage implements OnInit {
 }
 
 export class Empresa {
+  id: any;
   cod:any;
-  nome:any;
-  estado:number;
+  nome:String;
+  estado:String;
   endereco:String;
 }

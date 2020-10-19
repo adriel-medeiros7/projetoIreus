@@ -35,6 +35,20 @@ const routes: Routes = [
     path: 'empresa',
     loadChildren: () => import('./empresa/empresa.module').then( m => m.EmpresaPageModule)
   },
+  {
+    path: 'listar-empresa',
+    loadChildren: () => import('./listar-empresa/listar-empresa.module').then( m => m.ListarEmpresaPageModule)
+  },  {
+    path: 'relatorio-software',
+    loadChildren: () => import('./relatorio-software/relatorio-software.module').then( m => m.RelatorioSoftwarePageModule)
+  },
+  {
+    path: 'relatorio-hardware',
+    loadChildren: () => import('./relatorio-hardware/relatorio-hardware.module').then( m => m.RelatorioHardwarePageModule)
+  },
+
+
+
 ];
 
 @NgModule({

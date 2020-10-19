@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Empresas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item *ngFor="let empresa of empresas">
+        <ion-label>
+          Empresa: {{empresa.nome}}<br/>
+          Estado: {{empresa.estado}}<br/>
+          Endereço: {{empresa.endereco}}
+        </ion-label>
+        <ion-button (click)="removerEmpresa(empresa);" shape="round" fill="outline">Excluir</ion-button>
+      </ion-item>
+    </ion-list>
+  <div class="ion-text-center">
+    <ion-button routerLink="/home" shape="round" fill="outline">Voltar</ion-button>
+    <ion-button routerLink="/empresa" shape="round" fill="outline">Cadastrar Empresa</ion-button><br/>
+  </div>
+</ion-content>

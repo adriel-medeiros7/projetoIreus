@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Hardware } from '../hardware/hardware.page';
 
 @Component({
   selector: 'app-relatorio',
@@ -7,17 +6,10 @@ import { Hardware } from '../hardware/hardware.page';
   styleUrls: ['./relatorio.page.scss'],
 })
 export class RelatorioPage implements OnInit {
-
   constructor() { }
-
   ngOnInit() {
   }
+// SETOR, EMPRESA, EQUIPAMENTOS= hardware
+// SETOR, EMPRESA, CATEGORIA= software
 
-  listarHardware():Hardware[]{
-    let hardwares = [];
-    if (localStorage.getItem('hardware')) {
-      hardwares = JSON.parse(localStorage.getItem('hardware'));
-    }
-    return hardwares;
-  }
 }

@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>relatorio-software</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label >Categoria de software</ion-label>
+    <ion-select [(ngModel)]="categoria" placeholder="Categoria de software">
+      <ion-select-option value="A">A</ion-select-option>
+      <ion-select-option value="B">B</ion-select-option>
+      <ion-select-option value="C">C</ion-select-option>
+      <ion-select-option value="D">D</ion-select-option>
+      <ion-select-option value="E">E</ion-select-option>
+      <ion-select-option value="F">F</ion-select-option>
+      <ion-select-option value="G">G</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item *ngIf="empresas">
+    <ion-label>Empresa</ion-label>
+    <ion-select [(ngModel)]="empresa" placeholder="Empresa">
+      <div *ngFor="let empresa of empresas">
+        <ion-select-option value="{{empresa.nome}}">{{empresa.nome}}</ion-select-option>
+      </div>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label >Setor</ion-label>
+    <ion-select [(ngModel)]="setor" placeholder="Setor">
+      <ion-select-option value="">Selecione uma opçao</ion-select-option>
+      <ion-select-option value="Administração">Administração</ion-select-option>
+      <ion-select-option value="Contabilidade">Contabilidade</ion-select-option>
+      <ion-select-option value="Almoxerifado">Almoxerifado</ion-select-option>
+      <ion-select-option value="TI">TI</ion-select-option>
+      <ion-select-option value="RH">RH</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label >Setor</ion-label>
+    <ion-select [(ngModel)]="Software Licenciado? " placeholder="Setor">
+      <ion-select-option value="Sim">Sim</ion-select-option>
+      <ion-select-option value="Nao">Nao</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div class="ion-text-center">
+    <ion-button routerLink="/home" shape="round" fill="outline">Voltar</ion-button>
+    <ion-button (click)="gerarRelatorio(categoria,empresa,setor,temLicenca)" shape="round" fill="outline">Gerar Relatorio</ion-button>
+  </div>
+<div *ngIf="software">
+		<ion-item>
+			<ion-label position="floating">Identificação:</ion-label>
+			<ion-input type="text" [(ngModel)]="software.ident"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label >Categoria</ion-label>
+			<ion-select [(ngModel)]="software.categoria" placeholder="Categoria">
+        <ion-select-option value="A">A</ion-select-option>
+				<ion-select-option value="B">B</ion-select-option>
+				<ion-select-option value="C">C</ion-select-option>
+				<ion-select-option value="D">D</ion-select-option>
+				<ion-select-option value="E">E</ion-select-option>
+				<ion-select-option value="F">F</ion-select-option>
+				<ion-select-option value="G">G</ion-select-option>
+			</ion-select>
+		</ion-item>
+		<ion-item *ngIf="empresas">
+			<ion-label>Empresa</ion-label>
+			<ion-select [(ngModel)]="software.empresa" placeholder="Empresa">
+				<div *ngFor="let empresa of empresas">
+					<ion-select-option value="{{empresa.nome}}">{{empresa.nome}}</ion-select-option>
+				</div>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-label >Setor</ion-label>
+			<ion-select [(ngModel)]="software.setor" placeholder="Setor">
+				<ion-select-option value="Administração">Administração</ion-select-option>
+				<ion-select-option value="Contabilidade">Contabilidade</ion-select-option>
+				<ion-select-option value="Almoxerifado">Almoxerifado</ion-select-option>
+				<ion-select-option value="TI">TI</ion-select-option>
+				<ion-select-option value="RH">RH</ion-select-option>
+			</ion-select>
+		</ion-item>
+	</div>
+
+
+  <div *ngIf="softwares">
+		<ion-item *ngFor="let software of softwares">
+      <ion-label>
+        Identificação: {{software.ident}}<br/>
+        Categoria: {{software.equip}}<br/>
+        Empresa: {{software.empresa}}<br/>
+        Setor: {{software.setor}}<br/>
+        Licenciado: {{software.temLicenca}}
+      </ion-label>
+    </ion-item>
+</ion-content>

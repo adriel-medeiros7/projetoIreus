@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Selecione os Filtros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-item>
+    <ion-label position="floating">Identificação:</ion-label>
+    <ion-input type="text" [(ngModel)]="ident"></ion-input>
+  </ion-item> -->
+  <ion-item>
+    <ion-label >Equipamento</ion-label>
+    <ion-select [(ngModel)]="equip" placeholder="Equipamento">
+      <ion-select-option value="">Selecione uma opçao</ion-select-option>
+      <ion-select-option value="computador">Computador</ion-select-option>
+      <ion-select-option value="roteador">Roteador</ion-select-option>
+      <ion-select-option value="impressora">Impressora</ion-select-option>
+      <ion-select-option value="switch">Switch</ion-select-option>
+      <ion-select-option value="servidor">Servidor</ion-select-option>
+      <ion-select-option value="scanner">Scanner</ion-select-option>
+      <ion-select-option value="outros">Outros</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item *ngIf="empresas">
+    <ion-label>Empresa</ion-label>
+    <ion-select [(ngModel)]="empresa" placeholder="Empresa">
+      <div *ngFor="let empresa of empresas">
+        <ion-select-option value="{{empresa.nome}}">{{empresa.nome}}</ion-select-option>
+      </div>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label >Setor</ion-label>
+    <ion-select [(ngModel)]="setor" placeholder="Setor">
+      <ion-select-option value="">Selecione uma opçao</ion-select-option>
+      <ion-select-option value="Administração">Administração</ion-select-option>
+      <ion-select-option value="Contabilidade">Contabilidade</ion-select-option>
+      <ion-select-option value="Almoxerifado">Almoxerifado</ion-select-option>
+      <ion-select-option value="TI">TI</ion-select-option>
+      <ion-select-option value="RH">RH</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div class="ion-text-center">
+    <ion-button routerLink="/home" shape="round" fill="outline">Voltar</ion-button>
+    <ion-button (click)="gerarRelatorio(equip,empresa,setor)" shape="round" fill="outline">Gerar Relatório</ion-button>
+  </div>
+<div *ngIf="hardware">
+		<ion-item>
+			<ion-label position="floating">Identificação:</ion-label>
+			<ion-input type="text" [(ngModel)]="hardware.ident"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label >Equipamento</ion-label>
+			<ion-select [(ngModel)]="hardware.equip" placeholder="Equipamento">
+				<ion-select-option value="computador">Computador</ion-select-option>
+				<ion-select-option value="roteador">Roteador</ion-select-option>
+				<ion-select-option value="impressora">Impressora</ion-select-option>
+				<ion-select-option value="switch">Switch</ion-select-option>
+				<ion-select-option value="servidor">Servidor</ion-select-option>
+				<ion-select-option value="scanner">Scanner</ion-select-option>
+				<ion-select-option value="outros">Outros</ion-select-option>
+			</ion-select>
+		</ion-item>
+		<ion-item *ngIf="empresas">
+			<ion-label>Empresa</ion-label>
+			<ion-select [(ngModel)]="hardware.empresa" placeholder="Empresa">
+				<div *ngFor="let empresa of empresas">
+					<ion-select-option value="{{empresa.nome}}">{{empresa.nome}}</ion-select-option>
+				</div>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-label >Setor</ion-label>
+			<ion-select [(ngModel)]="hardware.setor" placeholder="Setor">
+				<ion-select-option value="Administração">Administração</ion-select-option>
+				<ion-select-option value="Contabilidade">Contabilidade</ion-select-option>
+				<ion-select-option value="Almoxerifado">Almoxerifado</ion-select-option>
+				<ion-select-option value="TI">TI</ion-select-option>
+				<ion-select-option value="RH">RH</ion-select-option>
+			</ion-select>
+		</ion-item>
+  </div>
+  
+  <div *ngIf="hardwares">
+		<ion-item *ngFor="let hardware of hardwares">
+      <ion-label>
+        Identificação: {{hardware.ident}}<br/>
+        Equipamento: {{hardware.equip}}<br/>
+        Empresa: {{hardware.empresa}}<br/>
+        Setor: {{hardware.setor}}
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>
