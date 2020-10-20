@@ -6,29 +6,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./relatorio-software.page.scss'],
 })
 export class RelatorioSoftwarePage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
+    this.empresas.push({nome:"Selecione uma empresa"});
+    let retorno = [];
+    retorno = JSON.parse(localStorage.getItem('empresa'));
+    retorno.forEach(item=>{
+      this.empresas.push(item);
+    });
   }
+  ngOnInit() {}
+
   empresas=[];
   softwares=[];
-gerarRelatorio(categoria,empresa,setor,temLicenca){
-  if (localStorage.getItem('software')) {
-    this.softwares = JSON.parse(localStorage.getItem('software'));
+
+  gerarRelatorio(categoria,empresa,setor,temLicenca){
+    if (localStorage.getItem('software')) {
+      this.softwares = JSON.parse(localStorage.getItem('software'));
+    }
+    if(categoria!=null && categoria!=""){
+      this.softwares=this.softwares.filter(software => software.categoria==categoria);
+    }
+    if(empresa!=null && empresa!="" && empresa!="Selecione uma empresa"){
+      this.softwares=this.softwares.filter(software => software.empresa==empresa);
+    }
+    if(setor!=null && setor!=""){
+      this.softwares=this.softwares.filter(software => software.setor==setor);
+    }
+    if(temLicenca!=null && temLicenca!=""){
+      this.softwares=this.softwares.filter(software => software.temLicenca==temLicenca);
+    }
+    // console.log(this.softwares);
   }
-  if(categoria!=null && categoria!=""){
-    this.softwares=this.softwares.filter(software => software.categoria==categoria);
-  }
-  if(empresa!=null && empresa!="" && empresa!="Selecione uma empresa"){
-    this.softwares=this.softwares.filter(software => software.empresa==empresa);
-  }
-  if(setor!=null && setor!=""){
-    this.softwares=this.softwares.filter(software => software.setor==setor);
-  }
-  if(temLicenca!=null && temLicenca!=""){
-    this.softwares=this.softwares.filter(software => software.temLicenca==temLicenca);
-  }
-  // console.log(this.softwares);
-}
 }
